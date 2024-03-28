@@ -23,8 +23,8 @@ export default function Register() {
                 toast.error("password and re entered passwords dosn't match");
             }
             else {
-                console.log(`Port = ${process.env.REACT_APP_BACKEND_URL} + /register`);
-                await axios.post(process.env.REACT_APP_BACKEND_URL + "/register", {
+                console.log(`Port = ${import.meta.env.VITE_BACKEND_URL} + /register`);
+                await axios.post(import.meta.env.VITE_BACKEND_URL + "/register", {
                     email: mail,
                     username: username,
                     password: pass,

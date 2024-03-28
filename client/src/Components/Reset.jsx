@@ -12,7 +12,7 @@ export default function Reset() {
         e.preventDefault();
 
         try {
-            await axios.post(process.env.REACT_APP_BACKEND_URL + "/reset", {
+            await axios.post(import.meta.env.VITE_BACKEND_URL + "/reset", {
                 email
             })
                 .then(res => {

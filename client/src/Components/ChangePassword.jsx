@@ -17,7 +17,7 @@ export default function ChangePassword() {
             toast.error("Both passwrods are different");
         }
         try {
-            await axios.put(process.env.REACT_APP_BACKEND_URL + '/changePassword', {
+            await axios.put(import.meta.env.VITE_BACKEND_URL + '/changePassword', {
                 mail, password
             })
                 .then(res => {
