@@ -158,7 +158,7 @@ app.post("/profile", auth.Auth, async(req, res)=>{
     return res.json({msg:"logged in", content:user}); 
 })
 
-// app.listen(port, ()=>{
-//     console.log(`listening on port ${port}.....`);
-// })
+app.listen(port, ()=>{
+    console.log(`listening on port ${port}.....`);
+})
 
