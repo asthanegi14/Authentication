@@ -7,14 +7,14 @@ export default function Login() {
     const history = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPass] = useState("");
-    const backendUrl = process.env.REACT_APP_BACKEND_URL;
-    console.log("backendUrl = " + backendUrl);
+    // const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    console.log("backendUrl = " + process.env.REACT_APP_BACKEND_URL);
 
     async function submit(e) {
         e.preventDefault();
 
         try {
-            await axios.post(`${backendUrl}/login`, {
+            await axios.post(process.env.REACT_APP_BACKEND_URL + '/login', {
                 email, password
             })
                 .then(res => {

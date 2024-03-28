@@ -6,13 +6,13 @@ import axios from "axios";
 export default function Reset() {
     const history = useNavigate();
     const [email, setEmail] = useState("");
-    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    // const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
     async function generateOTP(e) {
         e.preventDefault();
 
         try {
-            await axios.post(`${backendUrl}/reset`, {
+            await axios.post(process.env.REACT_APP_BACKEND_URL + "/reset", {
                 email
             })
                 .then(res => {
