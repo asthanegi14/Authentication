@@ -10,8 +10,6 @@ export default function Profile() {
     const name = location.state.username;
     const email = location.state.email;
 
-    console.log(email);
-
     return (
         <div>
             <Navbar />
