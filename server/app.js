@@ -4,7 +4,7 @@ const collection = require("./database");
 const cors = require("cors");
 //cors referse to cross-origin resources sharing, it allows authorized resource sharing with external third parties.
 const app = express();
-// const port = process.env.PORT;
+const port = process.env.PORT;
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const OTPGenerator = require("otp-generator");
