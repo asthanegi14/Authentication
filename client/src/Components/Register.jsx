@@ -24,7 +24,7 @@ export default function Register() {
             }
             else {
                 console.log(`Port = ${backendUrl}/register`);
-                await axios.post(`${backendUrl}/register`, {
+                await axios.post(`https://user-authentication-3dw5.onrender.com/register`, {
                     email: mail,
                     username: username,
                     password: pass,
