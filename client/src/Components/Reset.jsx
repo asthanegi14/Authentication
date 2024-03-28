@@ -11,7 +11,7 @@ export default function Reset() {
         e.preventDefault();
 
         try {
-            await axios.post("http://localhost:8000/reset", {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/reset`, {
                 email
             })
                 .then(res => {

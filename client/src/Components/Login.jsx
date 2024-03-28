@@ -12,7 +12,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            await axios.post("http://localhost:8000/login", {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, {
                 email, password
             })
                 .then(res => {
