@@ -6,13 +6,13 @@ import axios from "axios";
 export default function Reset() {
     const history = useNavigate();
     const [email, setEmail] = useState("");
-    // const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
     async function generateOTP(e) {
         e.preventDefault();
 
         try {
-            await axios.post(`https://user-authentication-3dw5.onrender.com/reset`, {
+            await axios.post(`${backendUrl}/reset`, {
                 email
             })
                 .then(res => {

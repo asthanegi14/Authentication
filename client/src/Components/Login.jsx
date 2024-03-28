@@ -7,13 +7,14 @@ export default function Login() {
     const history = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPass] = useState("");
-    // const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
+    console.log("backendUrl = " + backendUrl);
 
     async function submit(e) {
         e.preventDefault();
 
         try {
-            await axios.post(`https://user-authentication-3dw5.onrender.com/login`, {
+            await axios.post(`${backendUrl}/login`, {
                 email, password
             })
                 .then(res => {
