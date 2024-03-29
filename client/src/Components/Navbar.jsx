@@ -15,7 +15,7 @@ export default function Navbar() {
         e.preventDefault();
 
         try {
-            await axios.post(import.meta.env.VITE_BACKEND_URL + "/profile", {
+            await axios.post(`${import.meta.env.VITE_BACKEND_URL}/profile`, {
                 email
             }, {
                 headers: {
