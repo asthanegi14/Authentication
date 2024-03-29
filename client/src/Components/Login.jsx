@@ -12,7 +12,6 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            console.log("backendUrl = " + import.meta.env.VITE_BACKEND_URL);
             await axios.post(`${import.meta.env.VITE_BACKEND_URL}/login`, {
                 email, password
             })

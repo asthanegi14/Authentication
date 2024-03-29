@@ -1,5 +1,6 @@
 import ProfiePic from "../assets/profile.svg";
 import { useLocation, useNavigate } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -31,12 +32,14 @@ export default function Navbar() {
                 })
         }
         catch (e) {
+            toast.error("You are not authorized to access this before loggin");
             console.log(e);
         }
     }
 
     return (
         <div className="flex flex-row justify-between p-6">
+            <Toaster />
             <h1 className="text-2xl font-bold">AUTHENTICATION</h1>
 
             <div className="flex flex-row gap-4">

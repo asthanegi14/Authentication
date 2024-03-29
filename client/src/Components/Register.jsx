@@ -91,7 +91,7 @@ export default function Register() {
                         <button className="bg-orange-800 py-1 rounded hover:scale-105 duration-300 hover:bg-orange-700" onClick={submit}>Register Now</button>
                     </div>
                 </form>
-                <p className="text-sm p-6">Already have an account? <Link to={'/'} className="text-red-900 cursor-pointer hover:scale-115 duration-300 font-bold">Login here</Link></p>
+                <p className="text-sm p-6">Already have an account? <Link to={'/login'} className="text-red-900 cursor-pointer hover:scale-115 duration-300 font-bold">Login here</Link></p>
             </div>
         </div>
     )
