@@ -40,7 +40,7 @@ export default function Navbar() {
     return (
         <div className="flex flex-row justify-between p-6">
             <Toaster />
-            <h1 className="text-2xl font-bold">AUTHENTICATION</h1>
+            <h1 className="text-2xl font-bold">AUTH</h1>
 
             <div className="flex flex-row gap-4">n
                 <img src={ProfiePic} alt="profile" className="w-6 cursor-pointer hover:scale-110 duration-200" onClick={profile} />
