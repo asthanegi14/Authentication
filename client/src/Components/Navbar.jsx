@@ -42,9 +42,9 @@ export default function Navbar() {
             <Toaster />
             <h1 className="text-2xl font-bold">AUTH</h1>
 
-            <div className="flex flex-row gap-4">n
+            <div className="flex flex-row gap-4">
                 <img src={ProfiePic} alt="profile" className="w-6 cursor-pointer hover:scale-110 duration-200" onClick={profile} />
-                {!email ?
+                {email ?
                     <Link to='/' className="bg-orange-800 p-2 rounded hover:scale-110 duration-200">Log Out</Link>
                     :
                     <div className="flex flex-row gap-x-4">
