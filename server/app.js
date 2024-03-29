@@ -146,43 +146,20 @@ app.put("/changePassword", async(req, res)=>{
     return res.json("Password changed successfully");
 });
 
-// app.post("/profile", auth.Auth, async(req, res)=>{
-//     const {email} = req.body;
+app.post("/profile", auth.Auth, async(req, res)=>{
+    const {email} = req.body;
 
-//     const user = await collection.findOne({email:email});
-
-//     if(user==null){
-//         return res.json("Not signed in yet");
-//     }
-
-//     return res.json({msg:"logged in", content:user}); 
-// })
-
-app.get("/profile", auth.Auth, async (req, res) => {
-    const { email } = req.query;
-
-    if (!email) {
-        return res.status(400).json({ error: "Email is required" });
+    const user = await collection.findOne(
+        { email: email },
+        { projection: { password: 0 } }
+    );
+    
+    if(user==null){
+        return res.json("Not signed in yet");
     }
 
-    try {
-        const user = await collection.findOne(
-            { email: email },
-            { projection: { password: 0 } }
-        );
-
-        if (user == null) {
-            return res.status(404).json("Not signed in yet");
-        }
-
-        return res.json({ msg: "Logged in", content: user });
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ error: "An error occurred while fetching user data" });
-    }
-});
-
-
+    return res.json({msg:"logged in", content:user}); 
+})
 
 app.listen(port, ()=>{
     console.log(`listening on port ${port}.....`);
