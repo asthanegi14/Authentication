@@ -8,7 +8,6 @@ export default function Navbar() {
     const history = useNavigate();
     const name = location.state ? location.state.username : null;
     const email = location.state ? location.state.email : null;
-    // const backendUrl = process.env.REACT_APP_BACKEND_URL;
     const token = localStorage.getItem("token");
 
     async function profile(e) {

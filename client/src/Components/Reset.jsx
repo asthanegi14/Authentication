@@ -6,7 +6,6 @@ import axios from "axios";
 export default function Reset() {
     const history = useNavigate();
     const [email, setEmail] = useState("");
-    // const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
     async function generateOTP(e) {
         e.preventDefault();

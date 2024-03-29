@@ -11,7 +11,6 @@ export default function Register() {
     const [pNo, setPNo] = useState("");
     const [address, setAddress] = useState("");
     const [portfolio, setPortfolio] = useState("");
-    // const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
     const history = useNavigate();
 
@@ -23,7 +22,6 @@ export default function Register() {
                 toast.error("password and re entered passwords dosn't match");
             }
             else {
-                console.log(`Port = ${import.meta.env.VITE_BACKEND_URL}/register`);
                 await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, {
                     email: mail,
                     username: username,
@@ -40,8 +38,8 @@ export default function Register() {
                             toast.error("Username already exist, please try other username.");
                         }
                         else if (res.data == "registered successfully") {
-                            toast.success("You Have registered successfully");
-                            history("/");
+                            toast.success("You Have registered successfully, Go back to login page");
+                            // history("/");
                         }
                     })
                     .catch(e => {

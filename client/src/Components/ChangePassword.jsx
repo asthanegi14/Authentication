@@ -8,7 +8,6 @@ export default function ChangePassword() {
     const [newPassword, setNewPassword] = useState('');
     const location = useLocation();
     const mail = location.state.mail;
-    // const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
     async function update(e) {
         e.preventDefault();
